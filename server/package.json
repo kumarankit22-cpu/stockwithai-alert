@@ -1,0 +1,16 @@
+{
+  "name": "stockwithai-price-server",
+  "version": "1.0.0",
+  "description": "StockwithAi real-time price WebSocket server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@mathieuc/tradingview": "3.4.0",
+    "ws": "8.18.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
