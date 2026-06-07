@@ -1,0 +1,44 @@
+{
+  "name": "stockwithai-alert",
+  "version": "1.0.0",
+  "description": "StockwithAi By Ankit Kumar - Forex & Index Price Alert",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win",
+    "build:portable": "electron-builder --win portable",
+    "build:installer": "electron-builder --win nsis"
+  },
+  "build": {
+    "appId": "com.stockwithai.alert",
+    "productName": "StockwithAi Alert",
+    "directories": { "output": "dist" },
+    "win": {
+      "icon": "icon.ico",
+      "target": [
+        { "target": "nsis",     "arch": ["x64"] },
+        { "target": "portable", "arch": ["x64"] }
+      ]
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "StockwithAi Alert",
+      "installerIcon": "icon.ico",
+      "uninstallerIcon": "icon.ico",
+      "license": null,
+      "differentialPackage": false
+    },
+    "files": ["main.js", "preload.js", "index.html", "package.json"]
+  },
+  "devDependencies": {
+    "electron": "28.3.3",
+    "electron-builder": "24.13.3"
+  },
+  "dependencies": {
+    "@mathieuc/tradingview": "3.4.0"
+  }
+}
